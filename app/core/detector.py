@@ -7,6 +7,19 @@ class IMSIDetector:
         self.known_towers = {}
         self.threat_logs = []
 
+    def get_geo_location(self, mcc, mnc, lac, cid):
+        """
+        Simulasi pengambilan koordinat. 
+        Dalam produksi, ini bisa menembak API OpenCellID atau Mozilla Location Service.
+        """
+        # Contoh koordinat acak di wilayah Jakarta untuk testing
+        import random
+        lat = random.uniform(-6.2146, -6.1751)
+        lng = random.uniform(106.8166, 106.8456)
+        
+        return {"lat": lat, "lng": lng, "address": "Detected Sector Area"}
+
+
     def process_signal(self, cid, lac, mcc, mnc, signal_strength, neighbors):
         """
         Menganalisis data seluler yang tertangkap oleh SDR.
