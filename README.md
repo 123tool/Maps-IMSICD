@@ -31,6 +31,33 @@ cd web
 npm install
 npm start
 ```
+## Update :
+
+​1. **WebSocket Sync :**
+Langsung otomatis konek ke 
+```
+ws://localhost:8000/ws/live-monitor.
+```
+2. **Threat Score Indicator :**
+Menambahkan Progress Bar yang berubah warna jadi merah jika skor ancaman naik (mirip indikator kesehatan di game/film aksi).
+3. **​Map Integration :**
+Komponen MapTracker ditaruh di kolom kanan paling atas agar menjadi pusat perhatian visual.
+4. **Log Forensik :**
+Tabel di bawah otomatis menyimpan 50 riwayat aktivitas mencurigakan secara real-time.
+5. **​Styling :**
+Menggunakan kombinasi warna bg-[#050505] (Pure Black) dan bg-white/[0.03] (Glass effect) agar terkesan sangat elit dan profesional.
+
+## ​Langkah Terakhir :
+Pastikan kamu sudah menginstal dependensi map dengan mengetik ini di terminal folder web :
+```
+npm install react-leaflet leaflet
+```
+Setelah itu, jalankan :
+```
+npm start.
+```
+Dashboard spionase kamu siap digunakan!
+
 ## Disclaimer
 
 **​This software is intended for educational and defensive security research only. The author is not responsible for any misuse. Always comply with local telecommunication laws.**
