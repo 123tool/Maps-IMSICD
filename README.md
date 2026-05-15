@@ -1,63 +1,71 @@
-## MAPS SPY IMSICD
+## 📡 SPY IMSICD MAPS System
+
+![License](https://img.shields.io/badge/License-GPLv3-red.svg)
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![React](https://img.shields.io/badge/React-18.x-cyan.svg)
+![Status](https://img.shields.io/badge/Status-Operational-green.svg)
+
 **Advanced Mobile Network Intrusion Detection System (MNIDS)**
 
-SPY-IMSICD is a professional-grade forensic tool designed for detecting **IMSI Catchers**, **Stingrays**, and **Rogue Base Stations**. Built with a focus on real-time signal intelligence and cellular anomaly detection.
+Alat forensik tingkat profesional yang dirancang untuk mendeteksi **IMSI Catchers**, **Stingrays**, dan **Rogue Base Stations**. Proyek ini berfokus pada intelijen sinyal real-time dan deteksi anomali jaringan seluler dengan tampilan antarmuka *Cyber-Forensics*.
 
-## 🛠️ Tech Stack
+---
+
+## 🛠️ Stack
+
 - **Backend:** Python 3.10+ (FastAPI, WebSockets, SQLAlchemy)
-- **Frontend:** React.js, Tailwind CSS (Glassmorphism Architecture)
+- **Frontend:** React.js & Tailwind CSS (Glassmorphism Architecture)
 - **Engine:** Anomaly-based Detection Logic (Signal Fingerprinting)
+- **Mapping:** Leaflet.js (Geospatial Intelligence)
 
 ## ⚡ Features
-- **Tower Consistency Check:** Detects LAC/CellID mismatches.
-- **Power Analytics:** Identifies high-gain interception devices.
-- **Neighbor List Verification:** Spots isolated malicious towers.
-- **Real-time Radar:** Visual signal tracking via WebSocket.
-- **Forensic Logging:** Persistent database storage for malicious activity.
 
-## 🚀 Installation
+*   **Tower Consistency Check:** Validasi silang data LAC/CellID untuk mendeteksi pemalsuan tower.
+*   **Power Analytics:** Identifikasi perangkat intersepsi gain tinggi (Stingray) melalui kekuatan sinyal.
+*   **Neighbor List Verification:** Mendeteksi tower terisolasi yang tidak memiliki daftar tetangga valid.
+*   **Real-time Radar:** Visualisasi spektrum sinyal aktif melalui koneksi WebSocket.
+*   **Geospatial Tracking:** Pemetaan lokasi menara yang terdeteksi secara real-time pada dashboard.
+*   **Forensic Logging:** Penyimpanan otomatis hingga 50 aktivitas mencurigakan terakhir ke database.
 
-## 1. Requirements
-Ensure you have an SDR (RTL-SDR/HackRF) and `gr-gsm` installed on your system.
+---
+
+## 🚀 Installation Guide
+
+## 1. Prasyarat Sistem
+Pastikan Anda memiliki perangkat keras SDR (RTL-SDR atau HackRF) dan driver `gr-gsm` sudah terinstal di sistem operasi Anda.
 
 ## 2. Backend Setup
-```bash
+Masuk ke direktori utama proyek dan jalankan perintah berikut:
+## Install dependencies
+```
 pip install -r requirements.txt
+```
+## Jalankan server engine
+```
 uvicorn app.main:app --reload --host 0.0.0.0
 ```
 ## 3. Frontend Setup
+​Buka terminal baru, lalu masuk ke folder web untuk instalasi UI :
 ```
 cd web
+```
+## Install core dependencies & mapping tools
+```
 npm install
-npm start
-```
-## Update :
-
-​1. **WebSocket Sync :**
-Langsung otomatis konek ke 
-```
-ws://localhost:8000/ws/live-monitor.
-```
-2. **Threat Score Indicator :**
-Menambahkan Progress Bar yang berubah warna jadi merah jika skor ancaman naik (mirip indikator kesehatan di game/film aksi).
-3. **​Map Integration :**
-Komponen MapTracker ditaruh di kolom kanan paling atas agar menjadi pusat perhatian visual.
-4. **Log Forensik :**
-Tabel di bawah otomatis menyimpan 50 riwayat aktivitas mencurigakan secara real-time.
-5. **​Styling :**
-Menggunakan kombinasi warna bg-[#050505] (Pure Black) dan bg-white/[0.03] (Glass effect) agar terkesan sangat elit dan profesional.
-
-## ​Langkah Terakhir :
-Pastikan kamu sudah menginstal dependensi map dengan mengetik ini di terminal folder web :
-```
 npm install react-leaflet leaflet
 ```
-Setelah itu, jalankan :
+## Jalankan
 ```
-npm start.
+npm start
 ```
-Dashboard spionase kamu siap digunakan!
 
-## Disclaimer
+## 🛡️ Updates
 
-**​This software is intended for educational and defensive security research only. The author is not responsible for any misuse. Always comply with local telecommunication laws.**
+1. ​WebSocket Sync : Sinkronisasi otomatis ke ws://localhost:8000/ws/live-monitor untuk data tanpa delay.
+2. ​Threat Score Indicator : Progress bar dinamis yang berubah warna (Cyan ke Red) berdasarkan tingkat risiko keamanan.
+3. ​Auto-Forensic Log : Tabel arsip yang menyimpan data teknis setiap kali anomali terdeteksi.
+   
+## ​⚠️ Disclaimer
+
+​**This software is intended for educational and defensive security research only.
+Penyalahgunaan alat ini untuk kegiatan ilegal di luar tujuan riset keamanan adalah tanggung jawab pengguna sepenuhnya.**
